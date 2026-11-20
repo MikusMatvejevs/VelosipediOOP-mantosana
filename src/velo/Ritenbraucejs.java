@@ -67,9 +67,57 @@ public class Ritenbraucejs {
 				riteni[ritIndekss] = new Velosipeds(sedeklaPoz, diametrs, cena, razotajs, cels);
 				JOptionPane.showMessageDialog(null, "Pievienots parastais ritenis!", "Pievienots",
 						JOptionPane.INFORMATION_MESSAGE);
+				
+				
+			}else if (izvelesIndekss == 1) {
+				mape = "imgKalnu";
+				cels = Metodes.izveletiesBildi(mape);
+				if(cels == null)
+					break;
+				
+				int iestatitaisAtrums = Integer.parseInt(
+						JOptionPane.showInputDialog("Norādi iestatīto ātrumu"));
+				
+				izvelne = (String) JOptionPane.showInputDialog(null, 
+						"Vai ritenim ir papildus atsperes?", "Jautājums",
+						JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
+				
+				izvelesIndekss = Arrays.asList(atbilde).indexOf(izvelne);
+				boolean atsperes = (izvelesIndekss == 0) ? true : false;
+				
+				riteni[ritIndekss] = new KalnuRitenis(iestatitaisAtrums, atsperes, sedeklaPoz, 
+						 diametrs, cena, razotajs, cels);
+				ritIndekss++;
+				JOptionPane.showMessageDialog(null, "Pievienots kalnu ritenis!",
+						"Pievienots", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
-			
+			else if (izvelesIndekss == 2) {
+				mape = "bernuRImg";
+				cels = Metodes.izveletiesBildi(mape);
+				if(cels == null)
+					break;
+				
+				izvelne = (String) JOptionPane.showInputDialog(null, 
+						"Vai ritenim ir palīgriteņi?", "Jautājums",
+						JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
+				
+				izvelesIndekss = Arrays.asList(atbilde).indexOf(izvelne);
+				boolean paligR = (izvelesIndekss == 0) ? true : false;
+
+				izvelne = (String) JOptionPane.showInputDialog(null, 
+						"Vai ritenim ir zvaniņš?", "Jautājums",
+						JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
+				
+				izvelesIndekss = Arrays.asList(atbilde).indexOf(izvelne);
+				boolean zvanins = (izvelesIndekss == 0) ? true : false;
+				
+				riteni[ritIndekss] = new BernuRitenis(paligR, zvanins, sedeklaPoz, 
+						 diametrs, cena, razotajs, cels);
+				ritIndekss++;
+				JOptionPane.showMessageDialog(null, "Pievienots bērnu ritenis!",
+						"Pievienots", JOptionPane.INFORMATION_MESSAGE);
+			}
 			break; 
 			
 			case 1:
@@ -80,6 +128,18 @@ public class Ritenbraucejs {
 								((Velosipeds)riteni[i]).apskatitAtributus(), "Paziņojums",
 								JOptionPane.INFORMATION_MESSAGE,
 								((Velosipeds) riteni[i]).apskatitBildi());
+						
+						else if (riteni[i] instanceof KalnuRitenis)
+								JOptionPane.showMessageDialog(null, 
+								((Velosipeds)riteni[i]).apskatitAtributus(), "Paziņojums",
+								JOptionPane.INFORMATION_MESSAGE,
+								((KalnuRitenis)riteni[i]).apskatitBildi());
+						
+						else if (riteni[i] instanceof BernuRitenis)
+							JOptionPane.showMessageDialog(null, 
+							((Velosipeds)riteni[i]).apskatitAtributus(), "Paziņojums",
+							JOptionPane.INFORMATION_MESSAGE,
+							((BernuRitenis)riteni[i]).apskatitBildi());
 						else
 							break;
 					}
@@ -87,8 +147,6 @@ public class Ritenbraucejs {
 				break;
 			}
 		}while(izvelesIndekss != 3);
-		
-	
 	
 	}
 		
