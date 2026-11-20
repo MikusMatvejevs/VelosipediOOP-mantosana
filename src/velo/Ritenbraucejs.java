@@ -77,11 +77,14 @@ public class Ritenbraucejs {
 					for(int i=0; i<riteni.length; i++) {
 						if(riteni[i] instanceof Velosipeds)
 						JOptionPane.showMessageDialog(null, 
-								((Velosipeds)riteni[i]).izvadit(), "Paziņojums",
+								((Velosipeds)riteni[i]).apskatitAtributus(), "Paziņojums",
 								JOptionPane.INFORMATION_MESSAGE,
-								((Velosipeds)riteni[i].apskatitBildi());
+								((Velosipeds) riteni[i]).apskatitBildi());
+						else
+							break;
 					}
 				}
+				break;
 			}
 		}while(izvelesIndekss != 3);
 		
