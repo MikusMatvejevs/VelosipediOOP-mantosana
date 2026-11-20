@@ -15,7 +15,7 @@ public class Velosipeds {
 	Random rand = new Random();
 	
 	//Konstruktors
-	public Velosipeds(int sedeklaPoz, double ritenaD, double cena, String razotajs, String cels) {
+	public Velosipeds( int sedeklaPoz, double ritenaD, double cena, String razotajs, String cels) {
 		this.sedeklaPoz = sedeklaPoz;
 		this.ritenaD = ritenaD;
 		atrumsMS = kustibasAtrums();
@@ -35,7 +35,7 @@ public class Velosipeds {
 		if (!cels.endsWith(".png"))
 			cels += ".png";
 		
-		URL resurss = getClass().getResource("/atteli/"+cels);
+		URL resurss = getClass().getResource(cels);
 		if (resurss != null)
 			return new ImageIcon(new ImageIcon(resurss).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
 		else {
