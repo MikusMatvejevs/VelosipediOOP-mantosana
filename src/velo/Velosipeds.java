@@ -36,12 +36,8 @@ public class Velosipeds {
 			cels += ".png";
 		
 		/* URL resurss = getClass().getResource(cels); */
-		if (cels != null)
-			return new ImageIcon(new ImageIcon(cels).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
-		else {
-			JOptionPane.showMessageDialog(null, "Nevar atrast bildi: "+cels, "Brīdinājums", JOptionPane.WARNING_MESSAGE);
-			return null;
-		}
+			return new ImageIcon(new ImageIcon(cels).getImage().
+					getScaledInstance(100, 100, Image.SCALE_SMOOTH));
 	}
 	
 	public ImageIcon apskatitBildi() {
