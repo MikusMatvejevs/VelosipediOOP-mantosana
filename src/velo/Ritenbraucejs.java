@@ -38,7 +38,7 @@ public class Ritenbraucejs {
 			if(izvelne == null)
 				break;
 			
-			izvelesIndekss = Arrays.asList(darbibas).indexOf(izvelne);
+			izvelesIndekss = Arrays.asList(veidi).indexOf(izvelne);
 			
 			String razotajs = 
 					JOptionPane.showInputDialog("Norādi riteņa ražotāju");
